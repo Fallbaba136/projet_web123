@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 
 <?php ob_start(); ?>
 
-
+<h1 class="text-align-center">DINER</h1>
 
 
 <?php $content=ob_get_clean() ?>

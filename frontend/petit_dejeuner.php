@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 
 <?php ob_start(); ?>
 
-
+<h1>Petit Dejeuner</h1>
 
 
 <?php $content=ob_get_clean() ?>
