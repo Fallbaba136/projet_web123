@@ -37,12 +37,34 @@ $statement->execute() or die(var_dump($statement->errorInfo()));
 //Sous forme d'un tableau d'objet
 $results=$statement->fetchAll(PDO::FETCH_OBJ) ;?>
 
-<h1>Liste des recettes</li>
-<ul>
-<?php foreach($results as $v):?>
-    <li><?= $v->name ?></li>
-<?php endforeach;?>
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des recettes</title>
+</head>
+<body>
 
+<h1>Liste des recettes</h1>
+
+<?php foreach($recipes as $recipe): ?>
+
+    <div style="border:1px solid black; margin:10px; padding:10px;">
+        
+        <h2><?= $recipe['name'] ?></h2>
+
+        <img src="<?= $recipe['photo'] ?>" width="200">
+
+        <br><br>
+
+        <a href="recipe.php?id=<?= $recipe['id'] ?>">
+            Voir la recette
+        </a>
+
+    </div>
+
+<?php endforeach; ?>
+
+</body>
+</html>
 
 
