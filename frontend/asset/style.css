@@ -2,20 +2,30 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 200%;
+    height: 100vh;
+
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     background-color: azure;
+    height: 100vh;
+    overflow-y: auto;
 }
+
+/* Le main prend tout l'espace disponible entre header et footer */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 /*Style concernant l'entête*/
 .main-header{
     position: relative;
     height: 100px;
-    background-color:white;
+    background-color:gray;
     display: flex;
     align-items: center;
     padding-left: 20px;
@@ -27,6 +37,16 @@ body {
     color: red;
 }
 
+#search {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+  margin-left: 50px;
+  width: 300px;
+  box-shadow: #999;
+}
+
 /*Concernant le mini Logo dans le header*/ 
 .three{
     width: 150px;
@@ -36,7 +56,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    color: orange;
     margin-left: 10px;
 }
 
@@ -120,12 +139,6 @@ footer {
     font-size: 10px;
     margin-left: 200px;
 }
-/* Le main prend tout l'espace disponible entre header et footer */
-main {
-    flex: 1;                    /* Prend tout l'espace restant */
-    display: flex;
-    flex-direction: column;
-}
 
 /* Conteneur avec hauteur fixe */
 .full-width-image {
@@ -147,4 +160,117 @@ main {
 
 .text{
     word-spacing: 20px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+
+  vertical-align: middle;
+}
+
+.auth-form{
+    margin-top: -200px;
+}
+
+/* Stylisation des cartes de recettes */
+/* Conteneur global des recettes */
+.recettes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Chaque carte de recette */
+.recettes-container .card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 450px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.recettes-container .card:hover {
+  transform: scale(1.05);
+}
+.recettes-container .card img {
+  width: 100%;
+  height: 250px; /* ← augmente cette valeur */
+  object-fit: cover;
+}
+
+.recettes-container .card h2 {
+  font-size: 1.2em;
+  margin: 10px;
+}
+
+.recettes-container .card p {
+  font-size: 0.9em;
+  margin: 0 10px 10px 10px;
+}
+
+.recettes-container .card a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: #f7a800;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.recettes-container .card a:hover {
+  background-color: #e68a00;
+}
+
+/*Recipe detail */
+
+.recipe-hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.recipe-body {
+  padding: 20px 40px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #f7a800;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 0.85em;
+}
+
+.ingredients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.ingredient {
+  text-align: center;
+  width: 100px;
+}
+
+.ingredient img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.ingredient p {
+  font-size: 0.85em;
+  margin-top: 5px;
 }
